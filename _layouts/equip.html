@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <div class="content">
+
+    <article class="article  article--page  typeset">
+
+      <h1>{{ page.title }} {{ page.isa }}</h1>
+
+      <p>{% if page.daily %}Daily: ${{ page.daily }}{% endif %} {% if page.weekly %}Weekly: ${{ page.weekly }}{% endif %} {% if page.monthly %}Monthly: ${{ page.monthly }}{% endif %}</p>
+
+      <p><b><a href="mailto:info@southbranch.net">Lease it!</a></b></p>
+
+      {{ content }}
+        
+    </article>
+
+  </div>
+
+  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
+
+</main>
+
+{% include site-footer.html %}
