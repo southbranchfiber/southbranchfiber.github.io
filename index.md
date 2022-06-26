@@ -1,12 +1,9 @@
 ---
 layout: page
+title: South Branch Fiber
 permalink: /
 feature_image: "/assets/sbf_logo.svg"
 ---
-
-# South Branch Fiber
-
-### Equipment and services for enterprise fiber
 
 * Leasing the only [vibratory plow](/equipment/ptx40) in the San Francisco Bay Area.
 
