@@ -206,3 +206,8 @@ looks good. It's performant. It's maintainable. It's free.
 
 One final tip: Remember that, since Github Pages hosting is free, your
 repository can't be too large. Keep those PNGs small!
+
+# Futher reading
+
+[Github: testing your Pages site locally](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+[Github: problems people have had with local builds of Github Pages](https://github.com/github/docs/issues/2177)

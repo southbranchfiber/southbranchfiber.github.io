@@ -20,7 +20,7 @@
 # You can add any custom variable you wish, and it will be accessible
 # in templates as {{ site.myvariable }}.
 
-title: South Branch Fiber - Equipment and Services for Enterprise Fiber
+title: South Branch Fiber
 email: info@southbranch.net
 description: >- # this means to ignore newlines until "baseurl:"
   South Branch Fiber leases equipment and provides services for enterprise
