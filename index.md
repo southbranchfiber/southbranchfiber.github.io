@@ -2,7 +2,7 @@
 layout: page
 title: South Branch Fiber
 permalink: /
-feature_image: "/assets/sbf_logo.svg"
+feature_image: "/assets/ptx40.png"
 ---
 
 ### Equipment and services for enterprise fiber

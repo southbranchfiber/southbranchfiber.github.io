@@ -1,6 +1,7 @@
 ---
 name: Vermeer PTX40
 isa: vibratory plow
+equip_image: /assets/ptx40.jpg
 weekly: 1600
 monthly: 3700
 ---

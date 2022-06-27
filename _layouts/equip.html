@@ -10,6 +10,8 @@ layout: default
 
     <article class="article  article--page  typeset">
 
+      {% if page.equip_image %}<div class="feature"><img src="{{ page.equip_image }}" alt="image of {{ page.title }}"></div>{% endif %}
+
       <h1>{{ page.title }} {{ page.isa }}</h1>
 
       <p>{% if page.daily %}Daily: ${{ page.daily }}{% endif %} {% if page.weekly %}Weekly: ${{ page.weekly }}{% endif %} {% if page.monthly %}Monthly: ${{ page.monthly }}{% endif %}</p>
