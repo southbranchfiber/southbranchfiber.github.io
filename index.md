@@ -7,7 +7,7 @@ feature_image: "/assets/ptx40.png"
 
 ### Equipment and services for enterprise fiber
 
-* Leasing the only [vibratory plow](/equipment/ptx40) in the San Francisco Bay Area.
+* The only [vibratory plow](/equipment/ptx40) for lease in the San Francisco Bay Area.
 
 * 8 mm blowable microsonde for proofing 10 mm i.d. microduct.
 
