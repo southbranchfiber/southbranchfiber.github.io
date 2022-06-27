@@ -1,6 +1,6 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
+# This config file contains settings that affect your whole site, values
 # which you are expected to set up once and rarely edit after that. If you find
 # yourself editing this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
@@ -8,32 +8,37 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+##############################
+# 1. Site settings
+#
+# These are used to personalize your new site. In HTML or markdown files,
+# these may be accessed via {{ site.title }}, {{ site.email }}, and so on.
+# Remember that Jekyll only processes files that have front matter! So if you
+# want to use these variables in template expansions make sure your file has
+# front matter. Empty front matter is sufficient to trigger processing.
+#
+# You can add any custom variable you wish, and it will be accessible
+# in templates as {{ site.myvariable }}.
 
 title: South Branch Fiber - Equipment and Services for Enterprise Fiber
 email: info@southbranch.net
 description: >- # this means to ignore newlines until "baseurl:"
-  South Branch Fiber leases equipment and provides services for enterprise installation of optical fiber.
+  South Branch Fiber leases equipment and provides services for enterprise
+  installation of optical fiber.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://southbranch.net" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: southbranchnet
-github_username:  southbranchfiber
+url: https://southbranch.net/
 
-# 4. Jekyll settings
-sass:
-  style: compressed # Style compression
-permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
-excerpt_separator: <!-- more --> # Marks end of excerpt in posts
-timezone: America/Los_Angeles # Timezone for blog posts and alike
+##############################
+# 2. Collections
+#
+# A Jekyll collection is a set of files that use the same layout by
+# default and can be iterated over. "posts" is the standard collection
+# (of "blog posts"), and we also define "equipment" as our own
+# collection.
 
-# 5. Collections
 collections:
   posts:
-    title: Posts # Needed for Siteleaf
+    title: Posts # Siteleaf apparently needs this
     output: true
     description: "Latest news from South Branch" # The post list page content
     feature_text: |
@@ -42,7 +47,19 @@ collections:
   equipment:
     output: true
 
-# 6. Jekyll collections settings
+##############################
+# 3. Settings for collections
+#
+# Each map in the defaults list has a key "scope" and a key "values".
+# In the scope map, the "path" matches against each page's URL path
+# (empty string matches all paths)
+# and "type" matches against the name of the collection. For a page
+# matched by the scope, each of the variables defined in the "values" map
+# is given the value specified in the map.
+#
+# Again, these are defaults, used only if the variable isn't set in the
+# front matter of the page.
+
 defaults:
   -
     scope:
@@ -68,38 +85,83 @@ defaults:
     values:
       layout: equip # Set the default layout for equipment
 
-# 7. Site settings
+##############################
+# 4. Jekyll settings
+#
+#
+
+remote_theme: daviddarnes/alembic@main # alembic is pretty out of the box
+theme: minima # if using a remote theme, this seems to be ignored
+
+sass:
+  style: compressed # Style compression
+
+permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+excerpt_separator: <!-- more --> # marks end of excerpt in posts
+timezone: America/Los_Angeles # for blog posts and alike
+markdown: kramdown
+
+# If you need a plugin, add it here and it will be available during
+# processing.  Configuration variables for all the plugins are found
+# in section 8 (near the end of this file).
+
+plugins:
+- jekyll-feed
+- jekyll-remote-theme
+- jekyll-sitemap
+- jekyll-mentions
+- jekyll-paginate
+- jekyll-seo-tag
+- jekyll-redirect-from
+- jekyll-feed
+- jekyll-commonmark
+- jekyll-include-cache
+- jemoji
+
+# "exclude" files won't be processed and won't appear in the live site.
+# Files without front matter are copied verbatim into the live site.
+# Files with front matter are processed and the output is copied into the live site.
+
+exclude:
+- README.md
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- screenshot.png
+- LICENSE
+- CNAME
+- Gemfile
+- Gemfile.lock
+- alembic-jekyll-theme.gemspec
+- .jekyll-cache
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
+
+##############################
+# 5. Settings for the Alembic theme
+#
+# Some of these may really be used by Jekyll more broadly.
+
 encoding: utf-8 # Make sure the encoding is right
 lang: en-US
-title: "South Branch Fiber"
 logo: "/assets/sbf_logo.png" # Site logo, also used in jekyll-seo-tag
-description: "South Branch Fiber leases equipment and provides services for enterprise installation of optical fiber."
-url: "https://southbranch.net/"
-baseurl: ""
-email: "info@southbranch.net"
-# disqus: "alembic-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
+twitter_username: southbranchnet
+github_username:  southbranchfiber
+# disqus: "foobar-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
 # date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
 # google_analytics: ""
 # google_analytics_anonymize_ip: ""
 # service_worker: false # Will turn off the service worker if set to false
 # short_name: "Al" # The web application short name, defaults to the site title
-css_inline: false
 
 #css_inline doesn't work, for some reason -- styles.scss doesn't take effect
+css_inline: false
 #css_inline: true # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
 
-# 8. Site favicons & manifest icons
-favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
-  16: '/assets/logo@16px.png'
-  32: '/assets/logo@32px.png'
-  144: '/assets/logo@144px.png'
-#  180: '/assets/logo@180px.png'
-  192: '/assets/logo@192px.png'
-  256: '/assets/logo@256px.png'
-#  512: '/assets/logo@512px.png'
-#  1024: '/assets/logo@1024px.png'
+##############################
+# 6. Site navigation
 
-# 9. Site navigation
 navigation_header:
 #- title: Home
 #  url: /
@@ -118,17 +180,25 @@ navigation_footer:
 - title: Partners
   url: /partners/
 
-social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+# These appear in the sidebar, if one is enabled.
+# Set the urls then uncomment and comment out as desired.
+
+social_links:
   Twitter: https://twitter.com/SouthBranchNet
   GitHub: https://github.com/southbranchfiber
   link: https://southbranch.net/
   RSS: /feed.xml
 
-sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
+# These appear at the bottom of single blog posts; add as desired.
+# The value can be 'true' or the desired button color.
+
+sharing_links:
   Twitter: "#0d94e7"
   Email: true
 
-# Load custom fonts from fonts.google.com etc
+# Load custom fonts. To actually _use_ a font, you need to specify it in your .scss or .sass files.
+# The default styles are specified in /assets/styles.scss.
+
 fonts:
   preconnect_urls:
     - https://fonts.googleapis.com
@@ -136,50 +206,39 @@ fonts:
   font_urls:
     - https://fonts.googleapis.com/css2?family=Palanquin+Dark&family=Palanquin:wght@400;500&display=swap
 
-# Gem settings
-#paginate: 2 # jekyll-paginate > items per page
-#paginate_path: blog/page:num # jekyll-paginate > blog page
-jekyll-mentions: https://twitter.com # jekyll-mentions > service used when @replying
+##############################
+# 7. Site favicons & manifest icons
+
+favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
+  16: '/assets/logo@16px.png'
+  32: '/assets/logo@32px.png'
+  144: '/assets/logo@144px.png'
+#  180: '/assets/logo@180px.png'
+  192: '/assets/logo@192px.png'
+  256: '/assets/logo@256px.png'
+#  512: '/assets/logo@512px.png'
+#  1024: '/assets/logo@1024px.png'
+
+##############################
+# 8. Settings for any of the site plugins you have enabled.
+
+# jekyll-paginate
+# we turn off pagination because currently we don't care
+
+#paginate: 3 # items per page
+#paginate_path: blog/page:num # blog page
+
+# jekyll-mentions
+
+jekyll-mentions: https://twitter.com # service used when @replying
+
+# jekyll-seo-tag
+
 twitter:
-  username: SouthBranchNet # jekyll-seo-tag > Owners twitter username
-author: SouthBranchFiber # jekyll-seo-tag > default author
-social: # jekyll-seo-tag > social overrides
-  name: Daniel Dulitz # jekyll-seo-tag > real name
-  links:  # jekyll-seo-tag > social aliases (sameAs)
+  username: SouthBranchNet # Owners twitter username
+author: SouthBranchFiber # default author
+social: # social overrides
+  name: Daniel Dulitz # real name
+  links:  # social aliases (sameAs)
     - https://twitter.com/dulitz
     - https://github.com/dulitz
-
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-- jekyll-feed
-- jekyll-remote-theme
-- jekyll-sitemap
-- jekyll-mentions
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-redirect-from
-- jekyll-feed
-- jekyll-commonmark
-- jekyll-include-cache
-- jemoji
-
-remote_theme: daviddarnes/alembic@main
-
-# Exclude from processing.
-exclude:
-- README.md
-- CODE_OF_CONDUCT.md
-- CONTRIBUTING.md
-- screenshot.png
-- LICENSE
-- CNAME
-- Gemfile
-- Gemfile.lock
-- alembic-jekyll-theme.gemspec
-- .jekyll-cache
-- vendor/bundle/
-- vendor/cache/
-- vendor/gems/
-- vendor/ruby/
