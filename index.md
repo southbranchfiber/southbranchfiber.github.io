@@ -11,6 +11,8 @@ feature_image: "/assets/ptx40.png"
 
 * 8 mm blowable microsonde for proofing 10 mm i.d. microduct.
 
-* Weekly and monthly rentals. Delivered to your Bay Area jobsite for an extra charge.
+* Weekly and monthly rentals.
+
+* Delivered to your Bay Area jobsite for an extra charge.
 
 [info@southbranch.net](mailto:info@southbranch.net)
