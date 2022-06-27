@@ -18,4 +18,27 @@ $headingtype: (
   cap-height: 0.75
 );
 
+.categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-around;
+    width: 1000px;
+}
+
+.partner {
+    width: 20em;
+}
+
+.partnerlogo {
+    display: flex;
+    align-items: center;
+    height: 7em;
+    padding: 2em;
+}
+img.partnerlogo {
+    width: 80%;
+}
+
 @import "alembic";
