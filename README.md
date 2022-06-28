@@ -111,9 +111,8 @@ gem "jekyll-remote-theme"
 gem "github-pages", group: :jekyll_plugins
 ```
 
-16. Once your gemfile is Good, run
+16. Once your Gemfile is good, run
 ```
-bundle exec jekyll new --force --skip-bundle .
 bundle install
 ```
 Ideally it will complete with no errors and show "Bundle updated!"
