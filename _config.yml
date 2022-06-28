@@ -146,7 +146,7 @@ exclude:
 encoding: utf-8 # Make sure the encoding is right
 lang: en-US
 logo: "/assets/sbf_logo.png" # Site logo, also used in jekyll-seo-tag
-twitter_username: southbranchnet
+twitter_username: SouthBranchNet
 github_username:  southbranchfiber
 # disqus: "foobar-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
 # date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
@@ -167,8 +167,8 @@ navigation_header:
 #  url: /
 - title: Leasing
   url: /leasing/
-- title: Blog
-  url: /blog/
+- title: News
+  url: /news/
 #- title: Categories
 #  url: /categories/
 #- title: Search
