@@ -26,4 +26,28 @@ Our Vermeer PTX40 was delivered to us from the factory in 2022 and is
 equipped with Quad-Track tracks for minimum surface disturbance and
 maximum traction.
 
-44" wide and 96" long, the PTX40 fits almost anywhere you need to go.
+44" wide, 55" tall, and 96" long, the PTX40 fits almost anywhere you need to go.
+
+Key features:
+
+* installs fiber optic, electrical, gas, and irrigation lines
+* little disruption at the surface
+* installs hundreds of feet per work day
+* remote control for comfort, visibility, and precision
+* full crew is 3 people
+
+{% include video.html id="RYmumyF7m18" title="vibratory plow chute demo" %}
+
+{% include video.html id="X1HqDqeKj2g" title="Porta-Bore in action" %}
+
+Fiber installer demos pull blade, then chute blade:
+
+{% include video.html id="5LHObecYJwU" title="fiber installer demos pull blade, then chute" %}
+
+How it looks when soil conditions are perfect:
+
+{% include video.html id="cl-54c5cv80" title="vibratory plow pull blade demo" %}
+
+And when the soil is difficult (wet/hard/clayey):
+
+{% include video.html id="dKgqFxMoNLc" title="examples of difficult conditions" %}
